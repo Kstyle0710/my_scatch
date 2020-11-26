@@ -1,11 +1,8 @@
 import cv2
 import glob
-from PIL import Image, ImageDraw, ImageFont
-import imageio
 
 
 ## Loading an image
-# source = './source/23445.jpg'
 
 folder_path = 'source/*'
 images = sorted(glob.glob(folder_path))
@@ -17,7 +14,6 @@ def dodgeV2(x, y):
 
 for img in images:
     name = img.split('\\')[-1]
-    # source = Image.open('./source/{0}'.format(name))
 
     img = cv2.imread(img, 1)
 
@@ -51,7 +47,5 @@ for img in images:
     cv2.imwrite('./result/new1_{0}.jpg'.format(name), final_img)
 
 print("작업 완료")
-# cv2.imshow("", final_img)
-# cv2.waitKey()
-# cv2.destroyAllWindows()
+
 
